@@ -1,11 +1,7 @@
 import os
 
 def get_files_info(working_directory, directory="."):
-
-    try:
-        working_directory_path = os.path.abspath(working_directory)
-    except:
-        return f'Error: "{working_directory}" is not a valid working directory'
+    working_directory_path = os.path.abspath(working_directory)
     if not directory in os.listdir(working_directory_path) and not directory == ".":
         return f'Error: Cannot list "{directory}" as it is outside the permitted working directory'
     
